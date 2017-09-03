@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css?family=Lato')
+
+// COLOR variables
+$text-color: #3c3c3c
+$bg-color: #fff
+$secondary-color: #fff
+$template-color: #acb7cb
+$template-color-rgba: rgba(172,183,203,0.7)
+$template-color-rgba-light: rgba(172,183,203,0.1)
+$heading-color: #16a085
+$button-bg: $text-color
+$button-color: $secondary-color
+
+// FONT variables
+$basic-font: 'Lato', sans-serif
+$base-font-size: 16px
+
+// RWD 
+$pc: "(max-width: 1199px)"
+$tablets: "(max-width: 991px)"
+$phones: "(max-width: 767px)"
+$small: "(max-width: 479px)"
+
+// MIXINS
+=translate($posX, $posY)
+	-ms-transform:      translate($posX, $posY)
+	-webkit-transform:  translate($posX, $posY)
+	transform:          translate($posX, $posY)
+=scale($x, $y)
+	-ms-transform:      scale($x, $y)
+	-webkit-transform:  scale($x, $y)
+	transform:          scale($x, $y)
+=transition($transition)
+	-webkit-transition: $transition
+	-moz-transition:    $transition
+	transition:         $transition
+=rotateX3D($radius)
+	-webkit-transform: 	rotateX($radius)
+	transform: 					rotateX($radius)
+
+// GLOBAL styles
+*
+	box-sizing: border-box
+body 
+	margin: 0
+	font-family: $basic-font
+	color: $text-color
+	background: $bg-color
+	font-size: $base-font-size
+section
+	position: relative
+	&>.container
+		padding-top: 150px
+		padding-bottom: 150px
+.container
+	width: 100%
+	max-width: 1170px
+	margin: 0 auto
+	padding-left: 30px
+	padding-right: 30px
+h1, h2, h3
+	text-align: center
+	text-transform: uppercase
+	font-weight: 700
+	letter-spacing: 5px
+h1
+	font-size: 54px
+h2
+	font-size: 30px
+	&.jm-big
+		font-size: 34px
+h3
+	font-size: 24px
+@media #{$phones}
+	h1
+		font-size: 40px
+	h2
+		font-size: 26px
+		&.jm-big
+			font-size: 30px
+	h3
+		font-size: 24px
+@media #{$small}
+	h1
+		font-size: 32px
+	h2
+		font-size: 22px
+		&.jm-big
+			font-size: 26px
+	h3
+		font-size: 20px
+p
+	text-align: center
+	line-height: 24px
+	display: block
+	margin: 20px auto
+	width: 100%
+	max-width: 500px
+.jm-btn
+	display: block
+	margin: 30px auto 0 auto
+	width: 80%
+	max-width: 400px
+	text-transform: uppercase
+	font-weight: 400
+	line-height: 50px
+	border: none
+	background-color: $button-bg
+	color: $button-color
+	text-align: center
+	+transition(.4s ease-in-out)
+	&:hover
+		text-decoration: none
+		background-color: $button-bg
+		color: $button-color
+		+scale(1.1, 1.1)
+/* OVERLAYS AND SECTION BORDERS */
+.overlay
+	position: absolute
+	top: 0
+	width: 100%
+	height: 100%
+	background: $template-color-rgba
+.jm-bordered
+	position: relative
+	padding: 50px 20px
+	border-top: none
+	border-left: 2px solid $text-color
+	border-right: 2px solid $text-color
+	border-bottom: 2px solid $text-color
+	h2
+			width: 60%
+			position: absolute
+			top: -17px
+			left: 50%
+			+translate(-50%, -50%)
+	&.jm-bordered-white
+		border-color: $secondary-color
+		&::before,
+		&::after
+			border-color: $secondary-color
+	&::before,
+	&::after
+		content: " "
+		width: 20%
+		position: absolute
+		top: 0
+		border-top: 2px solid $text-color
+	&::before
+		left: 0
+	&::after
+		right: 0
+@media #{$small}
+	.jm-bordered
+		h2
+			width: 80%
+		&::before,
+		&::after
+			width: 10%
+/* SCROLLER */
+.scroller
+	position: absolute
+	bottom: 30px
+	left: 50%
+	+translate(-50%, 0)
+	.scroll
+		display: block
+		width: 26px
+		height: 40px
+		border: 2px solid $secondary-color
+		border-radius: 13px
+		position: relative
+		&.scroll-dark
+			border-color: $text-color
+			&::after
+				background: $text-color
+		&::after
+			content: ""
+			position: absolute
+			width: 6px
+			height: 6px
+			background: $secondary-color
+			top: 6px
+			left: calc(50% - 3px)
+			border-radius: 50px
+			+transition(.4s)
+		&:hover
+			&::after
+				top: 25px
+/* HEADING */
+#header
+	position: relative
+	height: 100vh
+	padding: 0
+	background: url(../images/header-bg.jpeg) center
+	background-size: cover
+	color: $secondary-color
+	.logo
+		position: absolute
+		top: 15%
+		left: 50%
+		+translate(-50%, 0)
+	.introduce
+		width: 100%
+		position: absolute
+		top: 50%
+		left: 50%
+		+translate(-50%, -50%)
+		p
+			display: block
+			margin: 20px auto
+			text-transform: uppercase
+			width: 100%
+			max-width: 500px
+/* SERVICES */
+#services
+	background: url(../images/service-bg.jpg) center
+	background-size: cover
+	color: $secondary-color
+/* WHAT WE DO */
+#what-we-do
+	.job
+		width: 100%
+		max-width: 700px
+		margin: 0 auto
+		padding: 50px 20px
+		+transition(.4s)
+		&:hover
+			background: $template-color-rgba-light
+			box-shadow: 2px 2px 10px #aaa
+	.image
+		text-align: center
+	h3
+		margin: 30px 0
+/* OUR WORKS */
+#our-works
+	padding: 50px 0
+	.jm-m-0
+		margin-left: 0
+		margin-right: 0
+	[class*="col-"]
+		margin-bottom: 10px
+	.col-jm-4
+		padding: 0
+		width: calc(33.33% - 10px)
+		margin-left: 5px
+		margin-right: 5px
+		&:first-of-type,
+		&:nth-of-type(4n+0)
+			margin-left: 0
+			width: calc(33.33% - 5px)
+		&:nth-of-type(3n+0),
+		&:last-of-type
+			margin-right: 0
+			width: calc(33.33% - 5px)
+	.image-box
+		height: 200px
+		background-position: center
+		background-size: cover
+		position: relative
+		.overlay
+			+transition(.3s)
+			a
+				+transition(.4s)
+				opacity: 0
+				color: $secondary-color
+				border-radius: 3px
+				text-align: center
+				display: block
+				width: 40px
+				height: 40px
+				position: absolute
+				bottom: 20px
+				right: 20px
+				.fa
+					font-size: 26px
+					line-height: 40px
+				&:hover
+					background: $bg-color
+					color: $text-color
+		h3
+			margin: 0
+			position: absolute
+			bottom: 30px
+			left: 30px
+			color: $secondary-color
+		&:hover
+			.overlay
+				background: rgba(0,0,0,0.7)
+				a
+					opacity: 1
+	.image-1,
+	.image-6
+		background-image: url(../images/tablet1.jpg)
+	.image-2,
+	.image-5
+		background-image: url(../images/tablet2.jpeg)
+	.image-3,
+	.image-4
+		background-image: url(../images/tablet3.jpeg)
+	.scroller
+		bottom: 0
+@media #{$tablets}
+	#our-works
+		.col-jm-4
+			width: calc(50% - 5px) !important
+			&:nth-of-type(1n+0)
+				margin-left: 0
+				margin-right: 5px
+			&:nth-of-type(2n+0)
+				margin-left: 5px
+				margin-right: 0
+@media #{$phones}
+	#our-works
+		.col-jm-4
+			width: 100% !important
+			margin-left: 0 !important
+			margin-right: 0 !important
+@media #{$tablets} and (-moz-touch-enabled: 1)
+	#our-works
+		.image-box
+			.overlay
+				a
+					opacity: 1
+					background: $bg-color
+					color: $text-color
+/* CONTACT */
+#contact
+	.container
+		padding-bottom: 50px
+/* FOOTER */
+footer
+	&>.container
+		padding: 40px 20px
+		text-align: center
+		img
+			margin-right: 20px
+	#totop
+		display: none
+		position: fixed
+		bottom: 20px
+		right: 20px
+		color: darken($template-color, 20%)
+		+transition(.4s)
+		&:hover
+			color: darken($template-color, 35%)
