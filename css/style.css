@@ -309,12 +309,6 @@ p {
     margin-left: 0 !important;
     margin-right: 0 !important; } }
 
-@media (max-width: 991px) and (-moz-touch-enabled: 1) {
-  #our-works .image-box .overlay a {
-    opacity: 1;
-    background: #fff;
-    color: #3c3c3c; } }
-
 /* CONTACT */
 #contact .container {
   padding-bottom: 50px; }
