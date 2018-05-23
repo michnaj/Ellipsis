@@ -5,4 +5,5 @@
 **Working with**: Visual Studio Code, Grunt, Eslint.
 
 **Source file**:
+
 ![alt text](/sourceimg/12-8-project.png "Ellipsis - Source psd file")
