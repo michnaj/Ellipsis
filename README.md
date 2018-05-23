@@ -6,4 +6,4 @@
 
 **Source file**:
 
-![alt text](/sourceimg/12-8-project.png "Ellipsis - Source psd file")
+![alt text](/sourceimg/ellipsis.jpg "Ellipsis - Source psd file")
