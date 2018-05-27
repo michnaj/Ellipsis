@@ -4,6 +4,8 @@
 
 **Working with**: Visual Studio Code, Grunt, Eslint.
 
+**Live view**: https://michnaj.github.io/Ellipsis/
+
 **Source file**:
 
 ![alt text](/sourceimg/ellipsis.jpg "Ellipsis - Source psd file")
